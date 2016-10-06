@@ -90,7 +90,19 @@ public class Game
 	Game.main(new String[0]);
 	
 }
+System.out.println();
 
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
 
 
 
