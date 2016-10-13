@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Disco light</title>
+			<meta http-equiv="refresh" content=".1">
+					<style>
+			
+						div
+						{
+						position:absolute; 
+						border:1px solid;
+						}
+					</style>
+	</head>
+
+	<body  id="theBody" >
+	
+		<p style="position:relative;left: 550px; top: 20px;">Welcome to Disco Light</p>
+							<script type="text/javascript">
+								window.onload = function()
+								
+								{
+										var top1=90;
+										var left1=450;
+										var width1=500;
+										var height1=500;
+										var color=["red","blue","green","yelow","pink","Chartreuse","DarkGreen","DeepPink","GreenYellow","Ivory "];
+										var the_body = document.getElementById("theBody");
+															while(width1> 50)
+															{ 
+																var this_div=document.createElement("div");
+																var random_color=Math.random()*10;
+																random_color=Math.floor(random_color);
+																this_div.style.top = (top1 + "px");
+																this_div.style.left = left1 + "px";
+																this_div.style.width = width1 + "px";
+																this_div.style.height = height1 + "px";
+																this_div.style.background=color[random_color];
+																the_body.appendChild(this_div);
+																top1=top1+20;
+																left1=left1+20;
+																width1=width1-40;
+																height1=height1-40;
+																
+															}
+
+								}
+
+						</script>
+	</body>
+
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Guess the colour</title>
+<style>
+
+
+
+</style>
+
+</head>
+<body  class="clr" onload="start()" >
+lets play
+
+<script> 
+function changeColor(user_input)
+{
+    document.body.style.backgroundColor=user_input;
+}
+function start()
+
+{ 
+	var r=0;
+	var user_input="";
+	var a=0;
+	var color=new Array("blue","red","yellow","black","pink");
+	var color_sort=color.sort();
+	//console.log(color_sort);
+	var random_col=color[Math.floor(Math.random()*5)];
+	//console.log(random);
+	console.log(random_col);
+	opi1=confirm("Are you interested in playing game");
+	if(opi1==true)
+	{
+	alert("Lets play");
+	do
+	{
+	user_input=prompt("choose a colour:\n "+color);
+	document.body.style.backgroundColor=user_input;
+	console.log(user_input);
+	if(user_input==null||user_input=="")
+	{
+	r++;
+	break;
+	}
+	if(user_input!=random_col)
+	{
+	
+	//var index=color.indexOf(user_input);
+	//console.log(color[index]);
+	
+	alert("Missed!try again. you opted for "+user_input);
+	//document.body.style.backgroundColor=user_input;
+	
+	}
+	//console.log(index);
+	
+	
+	
+	a++
+	}
+	while(user_input!=random_col)
+	
+	}
+	else
+	{
+	alert("thank you for your visit");
+	}
+	if(user_input==random_col)
+	alert("congrates! you got in "+a+" chance");
+	if(r>0)
+	{
+	
+	alert("You didn't complete the game.Thanks for corporation")
+	}
+	
+	
+	
+}
+
+
+</script>
+</body>
+
+</html>
