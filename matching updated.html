@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+                        <title>Matching Game</title>
+                       
+                        <style>
+                       
+                       
+                        #rightSide { left: 500px;border-left: 1px solid black }
+                        img {position:absolute}
+                        </style>
+                       
+                       
+                       
+                       
+                       
+</head>
+<body onload="generateFaces()";>
+click on the extra smiling face on the left side
+<div id="leftSide"style="position:absolute"></div><br>
+<div id="rightSide" style="position:absolute;width:500px; height:500px"></div>
+ 
+<script>
+function a()
+{
+if(wrong!=1)
+{
+var check=confirm("times up!! \nYours score is "+count+"\nDo you want to play again");
+if(check==true)
+location.reload();
+if(check==false)
+alert("Thanks for playing");
+clearInterval(interval);
+}
+
+
+}
+var interval=setInterval(a,60000);
+
+
+                        var count=0;
+					var wrong=0;
+                        var numberOfFaces=5;
+                        var theLeftSide = document.getElementById("leftSide");
+                        console.log(theLeftSide);
+                        function generateFaces()
+                        {
+for(var i=0;i<numberOfFaces;i++)
+{
+left1=Math.floor(Math.random() * 400);
+left1=left1+"px";
+top1=Math.floor(Math.random() * 400);
+top1=top1+"px";
+console.log(left1);
+var image=document.createElement("img");
+image.setAttribute('src', 'smile.png');
+image.style.left=left1;
+image.style.top=top1;
+//image.setAttribute('style', 'styleleft:left1');
+theLeftSide.appendChild(image);
+  
+}
+                                               
+                                               
+                                               
+                                            var theRightSide =document.getElementById("rightSide");
+                                           console.log(theRightSide);
+                                           leftSideImages = theLeftSide.cloneNode(true);
+                                           leftSideImages.removeChild(leftSideImages.lastChild);
+                                            theRightSide.appendChild(leftSideImages);
+                                                                                   
+                                                                                   
+                                            var theBody =document.getElementsByTagName("body")[0];
+                                            theLeftSide.lastChild.onclick=function nextLevel(event)
+                                             {
+                                              count=count+1;
+                                             event.stopPropagation();
+                                              while (theLeftSide.firstChild) // While there is a child
+                                             theLeftSide.removeChild(theLeftSide.firstChild);
+                                             while (theRightSide.firstChild) // While there is a child
+                                               theRightSide.removeChild(theRightSide.firstChild);
+                                                                                   
+                                                numberOfFaces += 2;
+                                               generateFaces();
+                                                 };
+                                                                                   
+                                                                                   
+                                                  theBody.onclick = function gameOver()
+                                                  {
+wrong=wrong+1;
+var again=confirm("Wrong choice\nGame Over! \nYour score is: "+count+" \n Do you want to play again");
+                                                                                    theBody.onclick = null;
+                                                                                    theLeftSide.lastChild.onclick = null;
+if(again==true)
+{
+location.reload();
+}
+else if(again==false)
+{
+alert("Thanks for playing");
+}
+                                                                                    };
+                                                                                   
+                                                                                   
+                        }
+                                                                                   
+                       
+                       
+                        </script>
+ 
+</body >
+ 
+ 
+ 
+ 
+</html>
