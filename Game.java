@@ -20,8 +20,8 @@ public class Game
 	int input=0;
 	
 	System.out.println("========================"+"rules"+"============================");
-	System.out.println("small margin in this game will mean diffrence of 30 and less ");
-	System.out.println("large margin in this game will mean diffrence of 30 and more ");
+	System.out.println("small margin in this game will mean diffrence of 30 and less. ");
+	System.out.println("large margin in this game will mean diffrence of 30 and more. ");
 	System.out.println("Total no of hit allowed is 5");
 	System.out.println("========================"+"rules"+"============================");
 	System.out.println("Enter a number between 1 to 100 to play game");
